@@ -1,6 +1,10 @@
 # Deploying Rails
 
-I learnt a lot from the **[Efficient Rails DevOps](https://efficientrailsdevops.com/)** book by **[Michael Trojanek](https://relativkreativ.at/about)**. - Thank you!
+I learnt a lot from
+* The **[Efficient Rails DevOps](https://efficientrailsdevops.com/)** book by **[Michael Trojanek](https://relativkreativ.at/about)**.
+* The **[Mastering Ansible](https://www.packtpub.com/product/mastering-ansible/9781784395483)** book by **Jesse Keating** and **James Freeman**.
+
+- Thank you!
 
 ## Prepare
 - Install Virtualbox
