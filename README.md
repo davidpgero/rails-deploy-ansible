@@ -1,5 +1,7 @@
 # Deploying Rails
 
+I learnt a lot from the **[Efficient Rails DevOps](https://efficientrailsdevops.com/)** book by **[Michael Trojanek](https://relativkreativ.at/about)**. - Thank you!
+
 ## Prepare
 - Install Virtualbox
 - Install Vagrant
@@ -20,6 +22,15 @@ pip install -r requirements.txt
 ```bash
 shh ansible@172.28.128.20
 python -c 'import crypt,getpass,sys;print(crypt.crypt(getpass.getpass(), crypt.mksalt(crypt.METHOD_SHA512)))'
+```
+
+## Ansible Vault
+```bash
+ansible-vault create group_vars/all/vault
+ansible-vault edit group_vars/all/vault
+
+cat ~/.ssh/id_rsa.pub >> roles/user/files/ansible/authorized_keys
+ansible-vault encrypt roles/user/files/ansible/*
 ```
 
 ## Vagrant
