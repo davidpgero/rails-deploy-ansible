@@ -31,6 +31,10 @@ ansible-vault edit group_vars/all/vault
 
 cat ~/.ssh/id_rsa.pub >> roles/user/files/ansible/authorized_keys
 ansible-vault encrypt roles/user/files/ansible/*
+
+# replace keys
+ansible-vault rekey group_vars/*/vault roles/user/files/*/*
+ansible-vault edit group_vars/all/vault
 ```
 
 ## Vagrant
