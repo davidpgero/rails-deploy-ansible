@@ -1,0 +1,36 @@
+---
+
+- import_playbook: bootstrap.yml
+
+- name: Provision
+  hosts: all
+  remote_user: ansible
+  become: yes
+  roles:
+    - role: cron
+      tags: cron
+    - role: time
+      tags: time
+    - role: git
+      tags: git
+    - role: ssh
+      tags: ssh
+    - role: ufw
+      tags: ufw
+    - role: packages
+      tags: packages
+    - role: user
+      param_name: app
+      param_comment: Application User
+      param_sudo: yes
+      tags: user_app
+    - role: user
+      param_name: gdp
+      param_comment: David Gero
+      param_encrypted_password: "{{ encrypted_gdp_password }}"
+      param_sudo: yes
+      tags: user_gdp
+    - role: user
+      param_name: root
+      param_encrypted_password: "{{ encrypted_root_password }}"
+      tags: user_root
