@@ -1,0 +1,17 @@
+---
+
+- name: Install packages
+  apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - lsof
+
+- name: Remove packages
+  apt:
+    name: "{{ packages }}"
+    state: absent
+  vars:
+    packages:
+      - postfix
