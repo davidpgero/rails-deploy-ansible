@@ -1,0 +1,5 @@
+[myapp]
+138.197.183.204 public_ip=138.197.183.204 private_ip=138.197.183.204
+
+[production:children]
+myapp

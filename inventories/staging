@@ -1,0 +1,5 @@
+[myapp]
+172.28.128.20 public_ip=172.28.128.20 private_ip=172.28.128.20
+
+[staging:children]
+myapp
