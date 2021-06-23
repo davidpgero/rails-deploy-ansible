@@ -15,6 +15,13 @@ pip install ansible
 pip install -r requirements.txt
 ```
 
+## Run
+```bash
+vagrant up
+# Wait until your target is ready (`sshd` service is loaded).
+ansible-playbook site.yml --verbose
+```
+
 ## Generate password
 
 **Important: the hash changes from OS to OS. Use the VM to create a hash.**
