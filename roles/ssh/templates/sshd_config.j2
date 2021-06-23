@@ -1,0 +1,9 @@
+# If you add a new User, don't forget to enable it here.
+AllowUsers ansible gdp
+ChallengeResponseAuthentication no
+ListenAddress {{ public_ip }}
+ListenAddress {{ public_ip | ipv4('ipv6') | ipaddr('address') }}
+PasswordAuthentication no
+PermitRootLogin no
+Protocol 2
+Subsystem sftp /usr/lib/openssh/sftp-server UseDNS no
