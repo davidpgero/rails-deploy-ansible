@@ -1,0 +1,26 @@
+---
+
+- name: Install ufw
+  apt:
+    name: ufw
+    state: present
+    update_cache: yes
+
+- name: Copy ufw configuration
+  copy:
+    src: "{{ item }}"
+    dest: /etc/ufw/{{ item }}
+    force: yes
+  with_items:
+    - user.rules
+    - user6.rules
+  notify: Reload ufw
+
+- name: Enable firewall
+  ufw:
+    state: enabled
+
+- name: Start firewall
+  service:
+    name: ufw
+    state: started
