@@ -17,6 +17,10 @@ With Python
 ```bash
 pip install ansible
 pip install -r requirements.txt
+ansible-galaxy install -r requirements.yml
+
+# sometimes you need to force the installation:
+ansible-galaxy install -f nginxinc.nginx
 ```
 
 ## Run
