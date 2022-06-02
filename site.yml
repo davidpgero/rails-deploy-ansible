@@ -6,8 +6,6 @@
   hosts: all
   remote_user: ansible
   become: yes
-  collections:
-    - nginxinc.nginx_core
   roles:
     - role: cron
       tags: cron
@@ -32,21 +30,3 @@
       param_encrypted_password: "{{ encrypted_gdp_password }}"
       param_sudo: yes
       tags: user_gdp
-    - role: user
-      param_name: root
-      param_encrypted_password: "{{ encrypted_root_password }}"
-      tags: user_root
-    - role: nginxinc.nginx
-      tags: ngnix
-    - role: nginx_config
-      tags: nginx_config
-      vars:
-        nginx_config_http_template_enable: true
-        nginx_config_http_template:
-          upstreams:
-            main:
-              name: app
-              servers:
-                server_one:
-                  address: "{{ private_ip }}"
-                  port: 3000
