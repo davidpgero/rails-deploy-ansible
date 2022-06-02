@@ -4,3 +4,4 @@ param_comment: ""
 param_encrypted_password: ""
 param_shell: /bin/bash
 param_sudo: false
+param_passwordless_sudo: false

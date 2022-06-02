@@ -72,3 +72,10 @@
       - authorized_keys
       - id_rsa
       - id_rsa.pub
+
+  - name: Passwordless sudo
+    copy:
+      content: "{{ param_name }} ALL=(ALL) NOPASSWD: ALL"
+      dest: /etc/sudoers.d/{{ param_name }}
+      mode: 0600
+    when: (param_passwordless_sudo == true) and (param_sudo == false)
