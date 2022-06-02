@@ -1,0 +1,2 @@
+ssh_authorized_keys:
+  - YOUR_PUBLIC_SSH_KEY

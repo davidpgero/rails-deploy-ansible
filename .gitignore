@@ -69,3 +69,4 @@ yarn-debug.log*
 .idea
 .vagrant
 .DS_Store
+cloud-init.yaml
