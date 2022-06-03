@@ -34,3 +34,5 @@
       param_encrypted_password: "{{ encrypted_gdp_password }}"
       param_sudo: yes
       tags: user_gdp
+    - role: geerlingguy.postgresql
+      tags: postgresql12
