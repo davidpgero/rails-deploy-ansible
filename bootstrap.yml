@@ -3,7 +3,28 @@
 - hosts: all
   remote_user: ubuntu
   gather_facts: no
-  become: yes
+  pre_tasks:
+    - name: Check Root (ubuntu) Login
+      raw: ssh -o BatchMode=yes -o ConnectTimeout=3 ubuntu@{{ public_ip }} exit
+      delegate_to: localhost
+      changed_when: false
+      failed_when: false
+      register: check_root_login
+
+    - block:
+      - name: Check for Python 3
+        raw: test -e /usr/bin/python3
+        changed_when: false
+        failed_when: false
+        register: check_python3
+
+      - name: Install Python 3 as Python
+        apt:
+          name: python-is-python3
+          state: present
+          update_cache: yes
+        when: check_python3.rc != 0
+      when: check_root_login.rc == 0
 
   roles:
     - role: user
@@ -12,3 +33,4 @@
       param_encrypted_password: "{{ encrypted_ansible_password }}"
       param_sudo: no
       param_passwordless_sudo: yes
+      when: check_root_login.rc == 0

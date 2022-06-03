@@ -88,6 +88,10 @@ multipass info YOUR_VM_NAME
 ```bash
 ss -ltun
 lsof -i :25
+systemctl --type=service
+
+ssh -o BatchMode=yes -o ConnectTimeout=3 ubuntu@192.168.64.11 exit
+echo $?
 ```
 
 ## How to use `app` user?
