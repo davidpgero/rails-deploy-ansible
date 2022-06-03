@@ -12,3 +12,5 @@ roles:
     version: 1.7.0
   - name: nginxinc.nginx
     version: 0.23.1
+  - name: zzet.rbenv
+    version: 3.6.0

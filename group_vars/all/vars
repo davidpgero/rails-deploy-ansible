@@ -5,3 +5,9 @@ encrypted_ansible_password: "{{ vault_encrypted_ansible_password }}"
 encrypted_ubuntu_password: "{{ vault_encrypted_ubuntu_password }}"
 encrypted_gdp_password: "{{ vault_encrypted_gdp_password }}"
 encrypted_app_password: "{{ vault_encrypted_app_password }}"
+rbenv:
+  env: system
+  version: v1.2.0
+  default_ruby: 2.7.5
+  rubies:
+    - version: 2.7.5

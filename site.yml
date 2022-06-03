@@ -36,3 +36,5 @@
       tags: nginx
     - role: geerlingguy.redis
       tags: redis
+    - role: zzet.rbenv
+      tags: rbenv_ruby
