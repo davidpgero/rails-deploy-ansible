@@ -1,5 +1,5 @@
 [myapp]
-192.168.64.6 public_ip=192.168.64.6 private_ip=192.168.64.6
+192.168.64.9 public_ip=192.168.64.9 private_ip=192.168.64.9
 
 [staging:children]
 myapp

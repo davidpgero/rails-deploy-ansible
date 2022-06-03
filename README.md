@@ -20,7 +20,7 @@ ansible-galaxy install -r requirements.yml
 ## Run
 ```bash
 # launch multipass
-multipass launch --cloud-init cloud-init.yaml --name 'PICK_YOUR_NAME' 20.04
+multipass launch --cloud-init cloud-init.yml --name 'PICK_YOUR_NAME' 20.04
 # run the provision
 ansible-playbook site.yml --verbose
 ```

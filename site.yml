@@ -20,6 +20,10 @@
     - role: packages
       tags: packages
     - role: user
+      param_name: ubuntu
+      param_encrypted_password: "{{ encrypted_ubuntu_password }}"
+      tags: user_ubuntu
+    - role: user
       param_name: app
       param_comment: Application User
       param_sudo: yes
