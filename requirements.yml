@@ -8,3 +8,7 @@ collections:
 roles:
   - name: geerlingguy.postgresql
     version: 3.3.0
+  - name: geerlingguy.redis
+    version: 1.7.0
+  - name: nginxinc.nginx
+    version: 0.23.1

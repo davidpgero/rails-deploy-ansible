@@ -32,3 +32,7 @@
       tags: user_gdp
     - role: geerlingguy.postgresql
       tags: postgresql12
+    - role: nginxinc.nginx
+      tags: nginx
+    - role: geerlingguy.redis
+      tags: redis
