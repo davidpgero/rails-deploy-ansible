@@ -70,3 +70,4 @@ yarn-debug.log*
 .vagrant
 .DS_Store
 cloud-init.yaml
+cloud-init.yml

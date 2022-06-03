@@ -2,6 +2,6 @@
 
 ansible_become_pass: "{{ vault_ansible_become_pass }}"
 encrypted_ansible_password: "{{ vault_encrypted_ansible_password }}"
-encrypted_root_password: "{{ vault_encrypted_root_password }}"
+encrypted_ubuntu_password: "{{ vault_encrypted_ubuntu_password }}"
 encrypted_gdp_password: "{{ vault_encrypted_gdp_password }}"
 encrypted_app_password: "{{ vault_encrypted_app_password }}"
