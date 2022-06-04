@@ -2,7 +2,7 @@
 AllowUsers ansible gdp
 ChallengeResponseAuthentication no
 ListenAddress {{ public_ip }}
-ListenAddress {{ public_ip | ipv4('ipv6') | ipaddr('address') }}
+ListenAddress {{ public_ip | ansible.utils.ipv4('ipv6') | ansible.utils.ipaddr('address') }}
 PasswordAuthentication no
 PermitRootLogin no
 Protocol 2

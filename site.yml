@@ -38,3 +38,5 @@
       tags: redis
     - role: zzet.rbenv
       tags: rbenv_ruby
+    - role: geerlingguy.nodejs
+      tags: nodejs
