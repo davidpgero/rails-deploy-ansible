@@ -4,12 +4,12 @@
   remote_user: ubuntu
   gather_facts: no
   pre_tasks:
-    - name: "Check Superuser Login"
+    - name: "Check Superusers"
       raw: ssh -o BatchMode=yes -o ConnectTimeout=3 {{ item }}@{{ public_ip }} exit
       delegate_to: localhost
       changed_when: false
       failed_when: false
-      register: check_superuser_login
+      register: check_superusers
       with_items:
         - root
         - ubuntu
@@ -29,7 +29,7 @@
           state: present
           update_cache: yes
         when: check_python3.rc != 0
-      when: check_superuser_login.changed
+      when: check_superusers.changed
 
   roles:
     - role: user
@@ -38,4 +38,4 @@
       param_encrypted_password: "{{ encrypted_ansible_password }}"
       param_sudo: no
       param_passwordless_sudo: yes
-      when: check_superuser_login.changed
+      when: check_superusers.changed
